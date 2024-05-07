@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,500;1,700&display=swap");
+
+$primary-color: #dca194;
+$secundary-color: #8f6b62;
+$white: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background-image: url(/img/banner_disca_min.png);
+  background-size: contain;
+}
+
+.p_text {
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+}
+
+nav.navbar {
+  background-color: $secundary-color;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  a.nav-link {
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  gap: 0.751rem;
+  align-items: center;
+}
+
+.brand {
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: $white;
+    img {
+      height: 30px;
+      width: auto;
+      margin-left: 0.3rem;
+    }
+  }
+  &-text {
+    color: $white;
+    line-height: 1.5rem;
+    :first-of-type {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.navbar-toggler-icon-custom {
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 50% !important;
+  position: relative;
+  border: 1px solid $primary-color !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+  &[aria-expanded="false"] {
+    &::before {
+      position: absolute;
+      content: "";
+      display: flex;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(/img/ic_nav_responsive.svg) !important;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &[aria-expanded="true"] {
+    &::before {
+      transition: all 3ms;
+      position: absolute;
+      content: "";
+      display: flex;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(/img/ic_nav_responsive_close.svg) !important;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+header {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &::after,
+  &::before {
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &::after {
+    background-image: url(/img/banner_disca_min.png);
+    z-index: -1;
+    background-position-x: center;
+  }
+  &::before {
+    background-image: url(/img/banner_disca.png);
+    z-index: -3;
+    background-position: center;
+  }
+  .banner {
+    &::before {
+      z-index: -2;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85) 25%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+    }
+  }
+}
+
+footer {
+  min-height: 300px;
+  max-height: max-content;
+  background-color: $secundary-color;
+  color: $white;
+  padding: 2rem 0.3rem;
+  font-size: 1.2rem;
+  .footer {
+    &-subtitle {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &-nav a {
+      color: $white;
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+section {
+  padding: 3rem 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.title-section {
+  color: $primary-color;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.header {
+  &-title {
+    color: $white;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  &-text {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+}
+
+.btn {
+  height: 46px;
+  width: 200px;
+  width: 100%;
+  border-radius: 23px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600 !important;
+  border: 1px solid $secundary-color !important;
+  gap: 1rem;
+  p {
+    margin-bottom: 0;
+  }
+  &-header {
+    background: $primary-color !important;
+  }
+  img {
+    filter: grayscale(0%) brightness(0%) contrast(100%);
+  }
+  &:hover {
+    color: $white !important;
+    background-color: $secundary-color !important;
+    border: 1px solid $secundary-color !important;
+    transition: 3ms ease-in-out;
+    img {
+      filter: grayscale(100%) brightness(100%) contrast(100%);
+    }
+  }
+}
+
+.btn-group-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-wp {
+  &_float {
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 90vh;
+    right: 20px;
+    text-decoration: none;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    &:hover {
+      transition: all 3ms;
+      box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card-service {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $white;
+  border-radius: 24px;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.05);
+  min-height: 220px;
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    background-color: $primary-color;
+    color: #ffffff;
+    font-size: 24px;
+  }
+  p.card-text {
+    @extend.p_text;
+  }
+}
+
+.container-services {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+section.testimony {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+section.service {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    rotate: 180deg;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    z-index: -1;
+  }
+}
+
+.card-testimony {
+  padding: 1.5rem 2.2rem;
+  border-radius: 40px;
+  background-color: $white;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.05);
+  &_professional {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  &_profession {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &_info {
+    color: grey;
+  }
+}
+
+.testimony-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.05);
+  img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 23px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      transition: all 3ms;
+      box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+      img {
+        filter: grayscale(0%) brightness(0%) contrast(100%);
+      }
+    }
+  }
+}
+
+
+.link-mail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+    section {
+    height: auto;
+    display: flex;
+    align-items: self-start;
+    padding-top: 7rem;
+  }
+   .container-services {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &-title {
+      font-size: 2.2rem;
+    }
+    &-text {
+      font-size: 1.2rem;
+    }
+  }
+  body {
+    font-family: "Montserrat", sans-serif !important;
+    background-image: url(/img/formasFD_responsive.png);
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .container-services {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .card-service {
+    min-width: 250px;
+  }
+  .title-section {
+    font-size: 1.8rem;
+  }
+  .brand {
+    &-icon {
+      height: 50px;
+      width: 50px;
+      img {
+        height: 24px;
+        width: auto;
+        margin-left: 0.3rem;
+      }
+    }
+    &-text {
+      :first-of-type {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

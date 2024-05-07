@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.product {
+  font-family: "Montserrat", sans-serif !important;
+  background-image: url(/img/banner_disca_min.png);
+  background-repeat: no-repeat !important;
+  background-size: cover;
+}
+section.products {
+  padding-top: 120px;
+}
+.product-card {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.05);
+}
+.product-img {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.product-img img {
+  width: 100%;
+  height: auto;
+}
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 30px;
+}
+.product-description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777777;
+  padding-left: 1rem;
+}
+@media screen and (max-width: 768px) {
+  body.product {
+    font-family: "Montserrat", sans-serif !important;
+    background-image: url(/img/formasFD_responsive.png);
+    background-size: contain;
+  }
+  section.products {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+}
+ 
